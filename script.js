@@ -14,15 +14,21 @@ let score = 0
 function getPlayerChoice() {
     let choices = ["rock", "paper", "scissors"];
     let getPlayerChoice = prompt(`What will u choose bruh?`);
-    for (let i = 0; i < choices.length; i++) {
-        if (getPlayerChoice.toLowerCase() === choices[i])
-            result = true
-    } 
-    if (result) {
+    if (getPlayerChoice.toLowerCase() === "rock") {
         alert(`Great choice!`)
+        alert(`Waiting for computer's choice...`)
+        game();
+    } else if (getPlayerChoice.toLowerCase() === "rock") {
+        alert(`Great choice!`)
+        alert(`Waiting for computer's choice...`)
+        game();
+    } else if (getPlayerChoice.toLowerCase() === "rock") {
+        alert(`Great choice!`)
+        alert(`Waiting for computer's choice...`)
+        game();
     } else {
-    alert(`NO! THIS IS NOT SOMETHING U USE FOR ROCK PAPER SCISSORS!!`)
-    getPlayerChoice();
+        alert(`NO! THIS IS NOT SOMETHING U USE FOR ROCK PAPER SCISSORS!!`)
+        getPlayerChoice();
     }
 }
 
