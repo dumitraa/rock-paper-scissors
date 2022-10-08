@@ -10,10 +10,19 @@ function game(choice1, choice2) {
     playRound()
     if (playerScore > computerScore) {
         alert(`Omg!! You won!!!! Congratz!!`)
+        if (confirm(`How abt another round, hero?`) == true) {
+            game();
+        }
     } else if (computerScore > playerScore) {
         alert(`Oh naur.. the computah won!! Naurrrr!!!!!`)
+        if (confirm(`Wanna get yo' revenge, warrior?`) == true) {
+            game();
+        }
     } else {
         alert(`Wut?? A draw??? ImPOSSIBle!`)
+        if (confirm(`YOU COME HERE RN AND PLAY AGAIN!!`) == true) {
+            game();
+        }
     }
 }
 
