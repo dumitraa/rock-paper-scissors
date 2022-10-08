@@ -6,23 +6,18 @@
 // repeat until one score reaches 5
 // declare final winner
 
-
-const playerSelection = getPlayerChoice();
-const computerSelection = getComputerChoice();
-let score = 0
-
 function getPlayerChoice() {
     let choices = ["rock", "paper", "scissors"];
-    let getPlayerChoice = prompt(`What will u choose bruh?`);
-    if (getPlayerChoice.toLowerCase() === "rock") {
+    let answer = prompt(`What will u choose bruh?`);
+    if (answer.toLowerCase() === "rock") {
         alert(`Great choice!`)
         alert(`Waiting for computer's choice...`)
         game();
-    } else if (getPlayerChoice.toLowerCase() === "rock") {
+    } else if (answer.toLowerCase() === "paper") {
         alert(`Great choice!`)
         alert(`Waiting for computer's choice...`)
         game();
-    } else if (getPlayerChoice.toLowerCase() === "rock") {
+    } else if (answer.toLowerCase() === "scissors") {
         alert(`Great choice!`)
         alert(`Waiting for computer's choice...`)
         game();
@@ -37,7 +32,20 @@ function getComputerChoice() {
     return random; // working
 }
 
+const playerSelection = getPlayerChoice();
+const computerSelection = getComputerChoice();
+
 function playRound(playerSelection, computerSelection) {
+    let yourScore = 0
+    let computerScore = 0
+    alert (`Okay! The computer chose ${getComputerChoice()}!`)
+    if (getPlayerChoice() === getComputerChoice()) {
+        alert (`It's a tie!! The score is ${yourScore}:${computerScore}`)
+    } else if ('rock', 'paper') {
+        alert (`Naur!! The computer won!! The score is ${yourScore}:${computerScore++}`)
+    } else if ('rock', 'scissors') {
+        alert (`Ye boii!! You won!! The score is ${yourScore++}:${computerScore}`)
+    }
 }
 
 function game() {
