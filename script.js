@@ -1,9 +1,20 @@
 let playerScore = 0
 let computerScore = 0
 
+let draw = "Omg!! It's a tie!!"
+let playerWin = "Wowow! Ya won!!"
+let computerWin = "Naur!! The damn computah won!!"
+
 function game(choice1, choice2) {
     for (i = 0; i < 5; i++)
-    playRound();
+    playRound()
+    if (playerScore > computerScore) {
+        alert(`Omg!! You won!!!! Congratz!!`)
+    } else if (computerScore > playerScore) {
+        alert(`Oh naur.. the computah won!! Naurrrr!!!!!`)
+    } else {
+        alert(`Wut?? A draw??? ImPOSSIBle!`)
+    }
 }
 
 function playRound() {
@@ -12,21 +23,22 @@ function playRound() {
     alert(`Alright!! Our dear robot chose ${choice2}!`)
     alert(`${choice1} vs ${choice2}!!!`)
     if (choice1 === choice2) {
-        alert(`Omg!! It's a tie!!`)
+        alert (draw)
         alert(`The score is ${playerScore}:${computerScore}`)
     } else if (choice1 === 'rock' && choice2 === 'scissors' || choice1 === 'paper' && choice2 === 'rock') {
-        alert(`Wowow!! Ya won!!`)
-        alert(`The score is ${playerScore++}:${computerScore}`)
+        alert(playerWin)
+        alert(`The score is ${++playerScore}:${computerScore}`)
     } else if (choice1 === 'rock' && choice2 === 'paper' || choice1 === 'paper' && choice2 === 'scissors') {
-        alert (`Naurr!! The damn computah won!!`)
-        alert(`The score is ${playerScore}:${computerScore++}`)
+        alert (computerWin)
+        alert(`The score is ${playerScore}:${++computerScore}`)
     }  else if (choice1 === 'scissors' && choice2 === 'paper') {
-        alert(`Wowow!! Ya won!!`)
-        alert(`The score is ${playerScore++}:${computerScore}`)
+        alert(playerWin)
+        alert(`The score is ${++playerScore}:${computerScore}`)
     } else if (choice1 === 'scissors' && choice2 === 'rock') {
-        alert (`Naurr!! The damn computah won!!`)
+        alert (computerWin)
         alert(`The score is ${playerScore}:${computerScore++}`)
     }
+}
 
 function getComputerChoice() {
     return choice2 = ['rock', 'paper', 'scissors'][Math.floor(Math.random() * ['rock', 'paper', 'scissors'].length)];
@@ -48,10 +60,5 @@ function getPlayerChoice() {
         alert(`Naur!! What even is that??`)
         getPlayerChoice();
 }
-}}
-
-// determine winner/tie
-// create variables for playerScore and computerScore
-    // increase score by 1 for each won round
-// declare final winner
+}
     
