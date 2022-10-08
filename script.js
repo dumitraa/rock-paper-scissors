@@ -9,21 +9,29 @@ function game(choice1, choice2) {
     for (i = 0; i < 5; i++)
     playRound()
     if (playerScore > computerScore) {
+        endGame()
         alert(`Omg!! You won!!!! Congratz!!`)
         if (confirm(`How abt another round, hero?`) == true) {
             game();
         }
     } else if (computerScore > playerScore) {
+        endGame()
         alert(`Oh naur.. the computah won!! Naurrrr!!!!!`)
         if (confirm(`Wanna get yo' revenge, warrior?`) == true) {
             game();
         }
     } else {
+        endGame()
         alert(`Wut?? A draw??? ImPOSSIBle!`)
         if (confirm(`YOU COME HERE RN AND PLAY AGAIN!!`) == true) {
             game();
         }
     }
+}
+
+function endGame() {
+    playerScore = 0;
+    computerScore = 0;
 }
 
 function playRound() {
