@@ -22,7 +22,7 @@ function game(choice1, choice2) {
         }
     } else {
         endGame()
-        alert(`Ciue?? EGalitate?? Iposibil!!`)
+        alert(`Ciue?? EGalitate?? Imposibil!!`)
         if (confirm(`VINO AICI INAPOI SI JOACA DIN NOU!!`) == true) {
             game();
         }
