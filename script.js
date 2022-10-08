@@ -63,14 +63,14 @@ function getComputerChoice() {
 }
 
 function getPlayerChoice() {
-    let answer = prompt(`Ce vei alege bo$$?`);
-    if (answer.toLowerCase() === 'piatra') {
+    let answer = prompt(`Ce vei alege bo$$? (P, H sau F trg ca n-avem timp de prostii)`);
+    if (answer.toLowerCase() === 'p') {
         alert(`Ai ales piatra!!! Mistoker rau!!`)
         return choice1 = 'piatra'
-    } else if (answer.toLowerCase() === 'hartie') {
+    } else if (answer.toLowerCase() === 'h') {
         alert(`Ai ales hartie!! E cam de pampalai da' ma rog..`)
         return choice1 = 'hartie'
-    } else if (answer.toLowerCase() === 'foarfeca') {
+    } else if (answer.toLowerCase() === 'f') {
         alert(`Ai ales foarfeca!! Ai grija cu ea.. e ascutita!!`)
         return choice1 = 'foarfeca'
     } else {
