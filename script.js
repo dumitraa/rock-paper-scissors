@@ -1,29 +1,29 @@
 let playerScore = 0
 let computerScore = 0
 
-let draw = "Omg!! It's a tie!!"
-let playerWin = "Wowow! Ya won!!"
-let computerWin = "Naur!! The damn computah won!!"
+let draw = "Omg!! E egalitate!!"
+let playerWin = "Wowow! Ai castigat!!!!"
+let computerWin = "Nuuu!! A castigat prostu!!"
 
 function game(choice1, choice2) {
     for (i = 0; i < 5; i++)
     playRound()
     if (playerScore > computerScore) {
         endGame()
-        alert(`Omg!! You won!!!! Congratz!!`)
-        if (confirm(`How abt another round, hero?`) == true) {
+        alert(`Omg!! AI castigat!! Bvvv!!!!`)
+        if (confirm(`Ce zici de o alta runda, eroule?`) == true) {
             game();
         }
     } else if (computerScore > playerScore) {
         endGame()
-        alert(`Oh naur.. the computah won!! Naurrrr!!!!!`)
-        if (confirm(`Wanna get yo' revenge, warrior?`) == true) {
+        alert(`O nu... a castigat computeru!!! NUUUUU!!`)
+        if (confirm(`Vrei sa te razbuni, luptatorule?`) == true) {
             game();
         }
     } else {
         endGame()
-        alert(`Wut?? A draw??? ImPOSSIBle!`)
-        if (confirm(`YOU COME HERE RN AND PLAY AGAIN!!`) == true) {
+        alert(`Ciue?? EGalitate?? Iposibil!!`)
+        if (confirm(`VINO AICI INAPOI SI JOACA DIN NOU!!`) == true) {
             game();
         }
     }
@@ -37,45 +37,46 @@ function endGame() {
 function playRound() {
     getComputerChoice();
     getPlayerChoice();
-    alert(`Alright!! Our dear robot chose ${choice2}!`)
+    alert(`oK!! Frumosul nostru robot a ales ${choice2}!`)
     alert(`${choice1} vs ${choice2}!!!`)
     if (choice1 === choice2) {
         alert (draw)
-        alert(`The score is ${playerScore}:${computerScore}`)
-    } else if (choice1 === 'rock' && choice2 === 'scissors' || choice1 === 'paper' && choice2 === 'rock') {
+        alert(`Scorul este ${playerScore}:${computerScore}`)
+    } else if (choice1 === 'piatra' && choice2 === 'foarfeca' || choice1 === 'hartie' && choice2 === 'piatra') {
         alert(playerWin)
-        alert(`The score is ${++playerScore}:${computerScore}`)
-    } else if (choice1 === 'rock' && choice2 === 'paper' || choice1 === 'paper' && choice2 === 'scissors') {
+        alert(`Scorul este ${++playerScore}:${computerScore}`)
+    } else if (choice1 === 'piatra' && choice2 === 'hartie' || choice1 === 'hartie' && choice2 === 'foarfeca') {
         alert (computerWin)
-        alert(`The score is ${playerScore}:${++computerScore}`)
-    }  else if (choice1 === 'scissors' && choice2 === 'paper') {
+        alert(`Scorul este ${playerScore}:${++computerScore}`)
+    }  else if (choice1 === 'foarfeca' && choice2 === 'hartie') {
         alert(playerWin)
-        alert(`The score is ${++playerScore}:${computerScore}`)
-    } else if (choice1 === 'scissors' && choice2 === 'rock') {
+        alert(`Scorul este ${++playerScore}:${computerScore}`)
+    } else if (choice1 === 'foarfeca' && choice2 === 'piatra') {
         alert (computerWin)
-        alert(`The score is ${playerScore}:${computerScore++}`)
+        alert(`Scorul este ${playerScore}:${computerScore++}`)
     }
 }
 
 function getComputerChoice() {
-    return choice2 = ['rock', 'paper', 'scissors'][Math.floor(Math.random() * ['rock', 'paper', 'scissors'].length)];
+    return choice2 = ['piatra', 'hartie', 'foarfeca'][Math.floor(Math.random() * ['piatra', 'hartie', 'foarfeca'].length)];
     // working
 }
 
 function getPlayerChoice() {
-    let answer = prompt(`What will u choose bruh?`);
-    if (answer.toLowerCase() === 'rock') {
-        alert(`You chose rock! HAHA!! Hard and sturdy like my--`)
-        return choice1 = 'rock'
-    } else if (answer.toLowerCase() === 'paper') {
-        alert(`You chose paper! Quite lame in my opinion but anyway..`)
-        return choice1 = 'paper'
-    } else if (answer.toLowerCase() === 'scissors') {
-        alert(`You chose scissors! Careful with those!! They're sharp!!`)
-        return choice1 = 'scissors'
+    let answer = prompt(`Ce vei alege bo$$?`);
+    if (answer.toLowerCase() === 'piatra') {
+        alert(`Ai ales piatra!!! Mistoker rau!!`)
+        return choice1 = 'piatra'
+    } else if (answer.toLowerCase() === 'hartie') {
+        alert(`Ai ales hartie!! E cam de pampalai da' ma rog..`)
+        return choice1 = 'hartie'
+    } else if (answer.toLowerCase() === 'foarfeca') {
+        alert(`Ai ales foarfeca!! Ai grija cu ea.. e ascutita!!`)
+        return choice1 = 'foarfeca'
     } else {
-        alert(`Naur!! What even is that??`)
+        alert(`Ciue zici u acolo bo$$? Nu inteleg smr`)
         getPlayerChoice();
 }
 }
     
+game();
