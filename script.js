@@ -12,13 +12,23 @@ function game(choice1, choice2) {
         endGame()
         alert(`Omg!! AI castigat!! Bvvv!!!!`)
         if (confirm(`Ce zici de o alta runda, eroule?`) == true) {
-        game();
+            game();
         }
     } else if (computerScore === 5) {
         endGame()
         alert(`O nu... a castigat computeru!!! NUUUUU!!`)
         if (confirm(`Vrei sa te razbuni, luptatorule?`) == true) {
-        game();
+            game();
+        }
+    } else if (playerScore === 0 && computerScore === 5) {
+        alert(`Mama da' ce ti-ai luat-o bo$$.. scz`)
+        if (confirm(`Vrei sa te razbuni, luptatorule?`) == true) {
+            game();
+        }
+    } else if (playerScore === 5 && computerScore === 0) {
+        alert(`Moamaaa ce i-ai dat-o frt!!!!!!`)
+        if (confirm(`Ce zici de o alta runda, eroule?`) == true) {
+            game();
         }
     }
 }
