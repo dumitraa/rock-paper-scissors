@@ -6,25 +6,19 @@ let playerWin = "Wowow! Ai castigat!!!!"
 let computerWin = "Nuuu!! A castigat prostu!!"
 
 function game(choice1, choice2) {
-    for (i = 0; i < 5; i++)
+    while (playerScore < 5 && computerScore < 5)
     playRound()
-    if (playerScore > computerScore) {
+    if (playerScore === 5) {
         endGame()
         alert(`Omg!! AI castigat!! Bvvv!!!!`)
         if (confirm(`Ce zici de o alta runda, eroule?`) == true) {
-            game();
+        game();
         }
-    } else if (computerScore > playerScore) {
+    } else if (computerScore === 5) {
         endGame()
         alert(`O nu... a castigat computeru!!! NUUUUU!!`)
         if (confirm(`Vrei sa te razbuni, luptatorule?`) == true) {
-            game();
-        }
-    } else {
-        endGame()
-        alert(`Ciue?? EGalitate?? Imposibil!!`)
-        if (confirm(`VINO AICI INAPOI SI JOACA DIN NOU!!`) == true) {
-            game();
+        game();
         }
     }
 }
@@ -53,7 +47,7 @@ function playRound() {
         alert(`Scorul este ${++playerScore}:${computerScore}`)
     } else if (choice1 === 'foarfeca' && choice2 === 'piatra') {
         alert (computerWin)
-        alert(`Scorul este ${playerScore}:${computerScore++}`)
+        alert(`Scorul este ${playerScore}:${++computerScore}`)
     }
 }
 
